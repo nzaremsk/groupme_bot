@@ -1,8 +1,13 @@
 import requests
 import os
 
-BOT_ID = os.environ['BOT_ID']
-TEST_BOT_ID = os.environ['TEST_BOT_ID']
+try:
+    BOT_ID = os.environ['BOT_ID']
+    TEST_BOT_ID = os.environ['TEST_BOT_ID']
+except KeyError:
+    print("Could not find environment variable BOT_ID or TEST_BOT_ID")
+    BOT_ID = ''
+    TEST_BOT_ID = ''
 #FIXME: comment this to go back to production
 #BOT_ID = TEST_BOT_ID
 
