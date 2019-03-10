@@ -1,0 +1,11 @@
+{
+	"name": "groupme bot",
+	"description": "automatic replies in the groupme",
+	"website": "https://globbot.herokuapp.com/",
+	"repository": "https://github.com/gobisa/groupme_bot",
+	"buildpacks": [
+		{
+			"url": "heroku/python"
+		}
+	]
+}

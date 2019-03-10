@@ -1,0 +1,5 @@
+include emoji copypastas
+machine learning to process chat and respond
+make the server have logins/a submission form that allows a user to input key words and responses
+---or "one word message: desired bot response"
+have a website download? that, on click, gets the groupchat history and downloads it.  or could save as text and print to screen as plaintext
