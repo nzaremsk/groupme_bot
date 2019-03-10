@@ -169,14 +169,15 @@ if __name__ == '__main__':
     PyLyrics.getLyrics('Riff Raff', 'How To Be The Man')
 
     scheduler = BackgroundScheduler()
+    tz = 'EDT'
     scheduler.add_job(messages.LA_time, trigger='cron',
-                      hour=12, minute=8, timezone='EST')
+                      hour=12, minute=8, timezone=tz)
     scheduler.add_job(messages.five_o_clock, trigger='cron',
-                      hour=5, timezone='EST')
+                      hour=5, timezone=tz)
     scheduler.add_job(messages.meat_show, trigger='cron',
                       month=2, day=14, hour=9, 
-                      timezone='EST')
-    scheduler.add_job(keep_app_awake, 'interval', minutes=20, timezone='EST')
+                      timezone=tz)
+    scheduler.add_job(keep_app_awake, 'interval', minutes=20, timezone=tz)
     scheduler.start()
 
 # Bind to PORT if defined, otherwise default to 5000.
