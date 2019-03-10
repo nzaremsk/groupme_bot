@@ -66,17 +66,7 @@ def incoming_message():
     message_id = message_dict["id"]
     sender_id = message_dict["sender_id"]
 
-    matthew_sender_id = "33957625"
     austin_sender_id = "37816131"
-
-    '''
-	#groupme does not allow bots to like messages
-	if sender_id == matthew_sender_id:
-		messaging.like_message(conversation_id, message_id)
-
-	if sender_id == '28232254':
-		messaging.like_message(conversation_id, message_id)
-	'''
 
     # bot commands
     if (message.startswith("@bot")):
