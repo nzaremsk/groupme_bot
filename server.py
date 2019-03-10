@@ -169,7 +169,7 @@ if __name__ == '__main__':
     PyLyrics.getLyrics('Riff Raff', 'How To Be The Man')
 
     scheduler = BackgroundScheduler()
-    tz = 'EDT'
+    tz = 'US/Eastern'
     scheduler.add_job(messages.LA_time, trigger='cron',
                       hour=12, minute=8, timezone=tz)
     scheduler.add_job(messages.five_o_clock, trigger='cron',
