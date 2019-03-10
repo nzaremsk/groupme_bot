@@ -28,6 +28,8 @@ app = flask.Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    return flask.abort(403)
+    '''
     if flask.request.method == 'GET':
         return flask.send_from_directory(directory='static', filename='index.html')
 
@@ -39,6 +41,7 @@ def index():
 
     messaging.send_message("> {}".format(message))
     return 'message sent'
+    '''
 
 
 @app.route('/incoming_message', methods=['GET', 'POST'])
@@ -147,7 +150,7 @@ def incoming_message():
 
             syllables = dic.inserted(word).split('-')
             print(syllables)
-            if (random.randint(0, 3) == 1 and syllables[-1] == 'er'
+            if (random.randrange(3) == 0 and syllables[-1] == 'er'
                and word not in ['other', 'another', 'ever', 'never', 'together']):
                 messaging.send_message(
                     "{}? I barely even know her!".format(word.capitalize()))
@@ -167,11 +170,9 @@ if __name__ == '__main__':
 
     scheduler = BackgroundScheduler()
     scheduler.add_job(messages.LA_time, trigger='cron',
-                      hour=12, minute=8, day_of_week='2,3,5,6',
-                      timezone='EST')
+                      hour=12, minute=8, timezone='EST')
     scheduler.add_job(messages.five_o_clock, trigger='cron',
-                      hour=5, day_of_week='0,1,3,6',
-                      timezone='EST')
+                      hour=5, timezone='EST')
     scheduler.add_job(messages.meat_show, trigger='cron',
                       month=2, day=14, hour=9, 
                       timezone='EST')
