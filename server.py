@@ -151,7 +151,7 @@ def incoming_message():
             syllables = dic.inserted(word).split('-')
             print(syllables)
             if (random.randrange(3) == 0 and syllables[-1] == 'er'
-               and word not in ['other', 'another', 'ever', 'never', 'together', 'whatever', 'whenever', 'earlier']):
+               and word not in ['other', 'another', 'ever', 'never', 'together', 'whatever', 'whenever', 'earlier', 'whomever', 'whoever']):
                 messaging.send_message(
                     "{}? I barely even know her!".format(word.capitalize()))
                 return 'message sent'
