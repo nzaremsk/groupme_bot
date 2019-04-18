@@ -110,7 +110,7 @@ def incoming_message():
             messaging.send_message("invalid command")
     # responses to single word messages
     elif message.lower() == "nice":
-        messaging.send_message("Yeah, nice.")
+        messaging.send_message("Screw you Doyle.")
     elif message.lower() == "wow":
         messaging.send_message("https://media1.fdncms.com/stranger/imager/u/original/25961827/28378083_1638438199580575_8366019535260245188_n.jpg")
     # responses to substrings
